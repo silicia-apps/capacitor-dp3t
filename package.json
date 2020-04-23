@@ -1,0 +1,51 @@
+{
+  "name": "@silicia/capacitor-dp3t",
+  "version": "0.0.1",
+  "description": "Plugin for use of dp3t-sdk in capacitor",
+  "main": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc",
+    "clean": "rimraf ./dist",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "Francesco Bozzotta (aka xFr4xx)",
+  "license": "MPL 2",
+  "dependencies": {
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "typescript": "^3.2.4",
+    "@capacitor/ios": "latest",
+    "@capacitor/android": "latest"
+  },
+  "files": [
+    "dist/",
+    "ios/",
+    "android/",
+    "CapacitorDp3tPlugin.podspec"
+  ],
+  "keywords": [
+    "capacitor",
+    "plugin",
+    "native",
+    "dp3t"
+  ],
+  "capacitor": {
+    "ios": {
+      "src": "ios"
+    },
+    "android": {
+      "src": "android"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silicia-apps/capacitor-dp3t-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silicia-apps/capacitor-dp3t-plugin.git/issues"
+  }
+}
