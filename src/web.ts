@@ -18,10 +18,9 @@ export class Dp3tPluginWeb extends WebPlugin implements Dp3tPlugin {
     console.log('Stop');
   }
 
-  async isPowerModeEnabled(): Promise<{ isEnabled: boolean}> {
-    console.log('powermode');
-    return {isEnabled : true};
-  }
+  async askForDisableBatteryOptimizer() {}
+  async askForActivateBluetooth() {}
+  async askForGeolocationPermission() {}
 
   async getStatus(): Promise<IStatus> {
     console.log('get Status');
@@ -32,7 +31,7 @@ export class Dp3tPluginWeb extends WebPlugin implements Dp3tPlugin {
       lastSyncUpdate: new Date().valueOf(),
       wasContactExposed: false,
       numberOfContacts: 0,
-      errors: []
+      errors: ''
     };
   }
 }

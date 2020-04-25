@@ -1,4 +1,4 @@
-# [Capacitor Dp3t]
+# Capacitor Dp3t
 
 Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
@@ -7,6 +7,11 @@ Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use th
 ### [v0.0.1]
 
 - Implement Dp3t-sdk for Android.
+
+### [v0.0.2]
+
+- add request function for activate bluetooth
+- add request functon for disable Battery Optmizer
 
 ## Supported Platform
 

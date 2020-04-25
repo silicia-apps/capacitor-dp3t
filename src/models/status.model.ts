@@ -5,5 +5,5 @@ export interface IStatus {
   receiving: boolean,
   wasContactExposed: boolean,
   lastSyncUpdate: number,
-  errors: string[]
+  errors: string
 }

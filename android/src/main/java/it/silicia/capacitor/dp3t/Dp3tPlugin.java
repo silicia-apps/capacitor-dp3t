@@ -1,9 +1,10 @@
 package it.silicia.capacitor.dp3t;
 
+import android.Manifest;
+import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
@@ -11,6 +12,8 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 
+import android.net.Uri;
+import android.provider.Settings;
 import android.util.Log;
 
 import org.dpppt.android.sdk.DP3T;
@@ -20,6 +23,8 @@ import org.dpppt.android.sdk.TracingStatus;
 public class Dp3tPlugin extends Plugin {
 
     private BroadcastReceiver sdkReceiver;
+    private static final int REQUEST_CODE_ASK_PERMISSION_FINE_LOCATION = 123;
+    public static final int BLUETOOTH_CODE_ENABLE_REQUEST_ID = 6;
 
     @Override
     public void load() {
@@ -59,9 +64,7 @@ public class Dp3tPlugin extends Plugin {
     @PluginMethod()
     public void start(PluginCall call) {
         try {
-            Log.d("start dp3t", "try");
             DP3T.start(getContext());
-            Log.d("start dp3t", "done");
             call.success();
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,6 +102,16 @@ public class Dp3tPlugin extends Plugin {
             e.printStackTrace();
             call.error(e.getMessage());
         }
+    }
+
+    @PluginMethod()
+    public void askForDisableBatteryOptimizer(PluginCall call) {
+        this.getContext().startActivity(new Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS, Uri.parse("package:" + getContext().getPackageName())));
+    }
+
+    @PluginMethod()
+    public void askForActivateBluetooth(PluginCall call) {
+        this.getContext().startActivity(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE));
     }
 
     @PluginMethod()
