@@ -59,10 +59,29 @@ public class MainActivity extends BridgeActivity {
   }
 }
 ```
+## 📌 Configure Plugin
+
+Open your Ionic app **capacitor.config.json** file and add this following code in plugins section.
+
+N.B. this configuration is for official dp3t dev backend, you can install your own backend and use your configuration.
+
+```json
+"Dp3tPlugin": {
+      "dev": true,
+      "app_id": "your.app.id",
+      "auth_code": "https://codegen-service-d.bag.admin.ch/",
+      "config_url": "https://demo.dpppt.org/",
+      "bucket_url": "https://demo.dpppt.org/",
+      "report_url": "https://demo.dpppt.org/",
+      "server_certificate": "sha256/YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=",
+      "config_certificate": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFdkxXZHVFWThqcnA4aWNSNEpVSlJaU0JkOFh2UgphR2FLeUg2VlFnTXV2Zk1JcmxrNk92QmtKeHdhbUdNRnFWYW9zOW11di9rWGhZdjF1a1p1R2RjREJBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==",
+      "bucket_public_key": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFdkxXZHVFWThqcnA4aWNSNEpVSlJaU0JkOFh2UgphR2FLeUg2VlFnTXV2Zk1JcmxrNk92QmtKeHdhbUdNRnFWYW9zOW11di9rWGhZdjF1a1p1R2RjREJBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg=="
+    }
+```
 
 ## 📌 Initialize Plugin
 
-Open your Ionic app **app.component.ts** file and add this folloing code.
+Open your Ionic app **app.component.ts** file and add this following code.
 
 ```typescript
 import 'capacitor-dp3t-plugin';
@@ -76,9 +95,6 @@ const { Dp3tPlugin } = Plugins;
 })
 export class AppComponent {
   constructor() {
-    // Initialize Plugin for your Application
-    // TO-DO (at this moment the plugin do automatic initialization of sdk with demo appId)
-    // 
     // Listen for state change
     Dp3tPlugin.addListener('Dp3tPluginUpdate', (info: IStatus) => {
       console.log('we have a change in the state');
