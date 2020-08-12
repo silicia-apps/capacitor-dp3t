@@ -21,6 +21,10 @@ Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use th
 - add function for send infect notification to backend
 - add configuration options
 
+### [v0.0.5]
+
+- update capacitor dependencies
+
 ## Supported Platform
 
 - [x] iOS (in roadmap)
