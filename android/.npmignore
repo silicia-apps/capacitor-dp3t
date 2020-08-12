@@ -6,4 +6,6 @@
 .DS_Store
 /build
 /captures
+/android/build
+/android/gradle
 .externalNativeBuild
