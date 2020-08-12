@@ -15,7 +15,7 @@ Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use th
 - add request function for activate bluetooth
 - add request functon for disable Battery Optmizer
 
-## [v0.0.3]
+### [v0.0.3]
 
 - update depency to dp3t-sdk 0.2.6 (last version without google/apple contact tracking api)
 - add function for send infect notification to backend
@@ -26,7 +26,7 @@ Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use th
 - [x] iOS (in roadmap)
 - [x] Android (partial)
 
-## Dp3t Demo App
+## Ionic Dp3t Demo App
 
 In a few days
 
