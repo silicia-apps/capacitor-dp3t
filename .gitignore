@@ -6,5 +6,4 @@ dist
 .gradle
 .settings
 *.tgz
-android/build
-android/gradle
+build
