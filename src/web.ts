@@ -10,31 +10,46 @@ export class Dp3tPluginWeb extends WebPlugin implements Dp3tPlugin {
     });
   }
 
+  async init() {
+    console.log('[dp3t] Init');
+  }
+
+  async sync() {
+    console.log('[dp3t] sync');
+  }
+
   async start(): Promise<void> {
-    console.log('Start');
+    console.log('[dp3t] Start');
   }
 
   async stop(): Promise<void> {
-    console.log('Stop');
+    console.log('[dp3t] Stop');
   }
 
-  async askForDisableBatteryOptimizer() {}
-  async askForActivateBluetooth() {}
-  async askForGeolocationPermission() {}
-
+  async askForDisableBatteryOptimizer() {
+    console.log('[dp3t] Ask for Battery Optmizer Status');
+  }
+  
   async getStatus(): Promise<IStatus> {
-    console.log('get Status');
+    console.log('[dp3t] get Status');
     return { 
       advertising: false,
       isActive: false,
       receiving: false,
       lastSyncUpdate: new Date().valueOf(),
-      wasContactExposed: false,
+      matchedContacts: [],
+      infectionStatus: 'HEALTHY',
       numberOfContacts: 0,
-      errors: ''
+      errors: '[]'
     };
   }
+
+  async sendIAmInfected(): Promise<void> {
+    
+  }
 }
+
+
 
 const Dp3tPlugin = new Dp3tPluginWeb();
 

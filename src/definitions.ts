@@ -7,12 +7,13 @@ declare module "@capacitor/core" {
 }
 
 export interface Dp3tPlugin {
+  init(options: {}): void;
   start(options: {}): void;
   stop(options: {}): void;
+  sync(options: {}): void;
   getStatus(options: {}): Promise<IStatus>;
   askForDisableBatteryOptimizer(options: {}): void;
-  askForActivateBluetooth(options: {}): void;
-  askForGeolocationPermission(options: {}): void;
+  sendIAmInfected(options: {}): void;
 }
 
 

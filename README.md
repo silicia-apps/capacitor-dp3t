@@ -1,5 +1,7 @@
 # Capacitor Dp3t
 
+!!! Sorry, i can't continue this work because i need a sponsoship from a government entity or public health organization for access to google/apple contact tracing api. !!!
+
 Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use this package as a [Ionic Capacitor](https://capacitor.ionicframework.com) Plugin in your App.
 
 ## Release Note:
@@ -12,6 +14,12 @@ Capacitor Dp3t is a native Dp3t-sdk bridge for IOS & Android. Now you can use th
 
 - add request function for activate bluetooth
 - add request functon for disable Battery Optmizer
+
+## [v0.0.3]
+
+- update depency to dp3t-sdk 0.2.6 (last version without google/apple contact tracking api)
+- add function for send infect notification to backend
+- add configuration options
 
 ## Supported Platform
 
